@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Checkbox = ({ setShowMobileNav }) => {
+const Checkbox = ({ showMobileNav, setShowMobileNav }) => {
   function handleClick() {
     setShowMobileNav(prev => !prev);
   }
@@ -9,7 +9,12 @@ const Checkbox = ({ setShowMobileNav }) => {
   return (
     <StyledWrapper>
       <label className="burger" htmlFor="burger">
-        <input type="checkbox" id="burger" onChange={handleClick} />
+        <input
+          type="checkbox"
+          id="burger"
+          checked={showMobileNav}
+          onChange={handleClick}
+        />
         <span />
         <span />
         <span />
